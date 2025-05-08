@@ -1,3 +1,28 @@
-GET http://localhost:8080
+# Get all issues
+GET http://localhost:8080/api/issues HTTP/1.1
 
+# Create a new issue
+POST http://localhost:8080/api/issues HTTP/1.1
+Content-Type: application/json
 
+{
+    "title": "Nid-de-poule",
+    "description": "Un gros nid-de-poule sur la route principale",
+    "status": "OUVERT"
+}
+
+# Get issue by ID
+GET http://localhost:8080/api/issues/1 HTTP/1.1
+
+# Update an issue
+PUT http://localhost:8080/api/issues/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Nid-de-poule réparé",
+    "description": "Le nid-de-poule a été comblé",
+    "status": "FERMÉ"
+}
+
+# Delete an issue
+DELETE http://localhost:8080/api/issues/1 HTTP/1.1
